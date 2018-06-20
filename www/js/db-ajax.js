@@ -169,7 +169,7 @@ function sendEmail()
 
             {
                 // clean list div...
-                $("#ordenslist").empty();
+                $("#ordenslistfield").empty();
  
                 console.log ('listOrdens');
  
@@ -186,14 +186,16 @@ function sendEmail()
                             var item = "<table border='0' width='98%' style='background-color:white;'>";
                                 item = item + "<tr><td><b>"+ordem.PAR+"</> - Usuário: "+ordem.NAME+"</td></tr>";
                                 item = item + "<tr><td>"+ordem.TIPO+ " Open Price: "+ ordem.OPENPRICE +"</td></tr></table><hr>";
-                            $("#ordenslist").append(item); 
+                            $("#ordenslistfield").append(item); 
+
                         });
-                     activate_page("#orderlist"); 
+
+                     activate_page("#ordenslist"); 
 
          
                     },
                     error: function (jqXHR, status) {
-                        $("#ordenslist").html("<center>Server Busy try later...  "+status+"</center>");
+                        $("#ordenslistfield").html("<center>Server Busy try later...  "+status+"</center>");
                     },
                 });
          

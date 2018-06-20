@@ -43,12 +43,7 @@
     });
     
         /* button  #listord */
-    $(document).on("click", "#listord", function(evt)
-    {
-        /* your code goes here */ 
-         listOrdens();
-         return false;
-    });
+    
     
         /* listitem  #ordenslist */
     $(document).on("click", "#ordenslist", function(evt)
@@ -64,6 +59,22 @@
          /*global activate_page */
          activate_page("#mainpage"); 
          return false;
+    });
+    
+        /* button  Voltar */
+    $(document).on("click", ".uib_w_15", function(evt)
+    {
+         /*global activate_page */
+         activate_page("#mainpage"); 
+         return false;
+    });
+    
+        /* button  #listord */
+    $(document).on("click", "#listord", function(evt)
+    {
+        /* your code goes here */ 
+         listOrdens();
+        return false;
     });
     
     }
