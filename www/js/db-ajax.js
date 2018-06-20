@@ -165,3 +165,37 @@ function sendEmail()
          
     } 
 
+   function listOrdens()         
+
+            {
+                // clean list div...
+                $("#ordenslist").empty();
+ 
+                console.log ('listOrdens');
+ 
+               $.ajax({
+                    type: "GET",
+                    url: getURL()+"list-ordens.php",
+                    timeout: 5000,
+                    contentType: "application/json; charset=utf-8",
+                    success: function (result, jqXHR) {
+         
+                        var ordens = JSON.parse(result);
+            
+                        $.each(ordens,function(i, ordem){
+                            var item = "<table border='0' width='98%' style='background-color:white;'>";
+                                item = item + "<tr><td><b>"+ordem.PAR+"</> - Usuário: "+ordem.NAME+"</td></tr>";
+                                item = item + "<tr><td>"+ordem.TIPO+ " Open Price: "+ ordem.OPENPRICE +"</td></tr></table><hr>";
+                            $("#ordenslist").append(item); 
+                        });
+                     activate_page("#orderlist"); 
+
+         
+                    },
+                    error: function (jqXHR, status) {
+                        $("#ordenslist").html("<center>Server Busy try later...  "+status+"</center>");
+                    },
+                });
+         
+    } 
+

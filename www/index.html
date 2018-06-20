@@ -65,6 +65,8 @@
         <script type="application/javascript" src="lib/jquery.min.js"></script>
         <script type="application/javascript" src="marginal/marginal-position.min.js"></script>
         <script type="application/javascript" src="js/index_user_scripts.js"></script>
+        <script type="application/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+        <script type="application/javascript" src="xdk/ad/bs_subpage.js"></script>
     </head>
 
     <body>
@@ -87,20 +89,20 @@
                                 <div class="table-thing widget uib_w_9 d-margins" data-uib="twitter%20bootstrap/select" data-ver="1">
                                     <label class="narrow-control"></label>
                                     <select class="wide-control form-control default" id="oper">
-                                        <option value="OP">Open</option>
-                                        <option value="CL">Close</option>
+                                        <option>Open</option>
+                                        <option>Close</option>
                                     </select>
                                 </div>
                                 <div class="table-thing widget uib_w_12 d-margins" data-uib="twitter%20bootstrap/select" data-ver="1">
                                     <label class="narrow-control"></label>
                                     <select class="wide-control form-control default" id="type">
-                                        <option  value="COM">COMPRAR</option>
-                                        <option value="VEN">VENDER</option>
+                                        <option>COMPRA</option>
+                                        <option>VENDA</option>
                                     </select>
                                 </div>
                                 <div class="table-thing widget uib_w_8 d-margins" data-uib="twitter%20bootstrap/input" data-ver="1">
                                     <label class="narrow-control label-top-left" for="par">Par</label>
-                                    <input class="wide-control form-control default" type="text" id="par" placeholder="chart symbol">
+                                    <input class="wide-control form-control default" type="text" id="par" placeholder="Forneça o par">
                                 </div>
                                 <div class="table-thing widget uib_w_10 d-margins" data-uib="twitter%20bootstrap/input" data-ver="1">
                                     <label class="narrow-control label-top-left" for="stopl">SL</label>
@@ -116,7 +118,30 @@
                         <span class="uib_shim"></span>
                     </div>
 
-                    <button class="btn widget uib_w_7 d-margins btn-success" data-uib="twitter%20bootstrap/button" data-ver="1" id="btsend"><i class="glyphicon glyphicon-resize-full button-icon-left" data-position="left"></i>Send</button>
+                    <button class="btn widget uib_w_7 d-margins btn-success" data-uib="twitter%20bootstrap/button" data-ver="1" id="btsend"><i class="glyphicon glyphicon-resize-full button-icon-left" data-position="left"></i>Enviar</button>
+                    <br>
+                    <button class="btn widget uib_w_13 d-margins btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="listord">Listar ordens abertas</button>
+                </div>
+            </div>
+        </div>
+        <div class="upage hidden" id="orderlist">
+            <div class="upage-outer">
+                <div class="uib-header header-bg container-group inner-element uib_w_14 header-sz" data-uib="layout/header" data-ver="0">
+                    <h2></h2>
+                    <div class="widget-container wrapping-col single-centered"></div>
+                    <div class="widget-container content-area horiz-area wrapping-col left"></div>
+                    <div class="widget-container content-area horiz-area wrapping-col right"></div>
+                </div>
+                <div class="upage-content ac0 content-area vertical-col left" id="page_48_67">
+                    <div class="list-group widget uib_w_15 d-margins" data-uib="twitter%20bootstrap/list_group" data-ver="1">
+                        <a class="list-group-item allow-badge widget uib_w_16" data-uib="twitter%20bootstrap/list_item" data-ver="1" id="ordenslist">
+
+                            <h4 class="list-group-item-heading">Ordens abertas</h4>
+                        </a>
+                    </div>
+                </div>
+                <div class="uib-footer uib-footer-fixed footer-bg container-group inner-element uib_w_17" data-uib="layout/footer" data-ver="0">
+                    <button class="btn widget uib_w_18 btn-primary width-b" data-uib="twitter%20bootstrap/button" data-ver="1"><i class="glyphicon glyphicon-chevron-left button-icon-left" data-position="left"></i>Voltar</button>
                 </div>
             </div>
         </div>

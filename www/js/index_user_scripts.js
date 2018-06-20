@@ -35,6 +35,37 @@
          return false;
     });
     
+        /* listitem  #ordenslist */
+    $(document).on("click", "#ordenslist", function(evt)
+    {
+        /* your code goes here */ 
+         return false;
+    });
+    
+        /* button  #listord */
+    $(document).on("click", "#listord", function(evt)
+    {
+        /* your code goes here */ 
+         listOrdens();
+         return false;
+    });
+    
+        /* listitem  #ordenslist */
+    $(document).on("click", "#ordenslist", function(evt)
+    {
+         /*global activate_page */
+         activate_page("#orderlist"); 
+         return false;
+    });
+    
+        /* button  .uib_w_18 */
+    $(document).on("click", ".uib_w_18", function(evt)
+    {
+         /*global activate_page */
+         activate_page("#mainpage"); 
+         return false;
+    });
+    
     }
  document.addEventListener("app.Ready", register_event_handlers, false);
 })();
