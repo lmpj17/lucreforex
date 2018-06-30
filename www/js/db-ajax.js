@@ -30,7 +30,7 @@ function getURL()
                        var userData = JSON.parse(result);
  
                        if (userData.MESSAGE == "OK"){
-            						   $("#msg").html('<center><b>'+userData.MESSAGE+' Qt.Usuarios: '+userData.QTUSERS+' Qt.Ordens: '+userData.QTORDENS+'</center>');
+            						   $("#msg").html('<center><b>Enviado: '+oper+' Qt.Usuarios: '+userData.QTUSERS+'</center>');
             						   error = true;
                        }
                        else

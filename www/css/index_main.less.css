@@ -403,7 +403,7 @@ body#afui .splt {
 }
 @media all {
   .header-sz {
-    min-height: 200px;
+    min-height: 150px;
   }
 }
 .align-widget {
@@ -516,5 +516,51 @@ label:empty {
     -o-flex: 1 0 0% !important;
     flex: 1 0 0% !important;
     min-width: 100%;
+  }
+}
+.uib_row_2:not(.cright) > .col {
+  padding-right: 20px;
+}
+.uib_row_2.cright > .col {
+  padding-left: 20px;
+}
+@media all {
+  .col-1_12-12 {
+    width: auto;
+    float: none !important;
+  }
+  .urow:not(.cright) > .col-1_12-12 {
+    padding-right: 0px !important;
+  }
+  .urow.cright > .col-1_12-12 {
+    padding-left: 0px !important;
+  }
+}
+@media all and (min-width: 0px) {
+  .row-height-2 > .col > .content-area {
+    min-height: 34px;
+  }
+}
+.uib_row_3:not(.cright) > .col {
+  padding-right: 20px;
+}
+.uib_row_3.cright > .col {
+  padding-left: 20px;
+}
+@media all {
+  .col-1_12-12 {
+    width: auto;
+    float: none !important;
+  }
+  .urow:not(.cright) > .col-1_12-12 {
+    padding-right: 0px !important;
+  }
+  .urow.cright > .col-1_12-12 {
+    padding-left: 0px !important;
+  }
+}
+@media all and (min-width: 0px) {
+  .row-height-3 > .col > .content-area {
+    min-height: 34px;
   }
 }
