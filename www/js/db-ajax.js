@@ -183,10 +183,17 @@ function sendEmail()
                         var ordens = JSON.parse(result);
             
                         $.each(ordens,function(i, ordem){
+                            var tipoordem = '';
+                            if (ordem.TIPO === 'COM')
+                               tipoordem = 'BUY';
+                             else  
+                               tipoordem = 'SELL';
+
                             var item = "<table border='0' width='98%' style='background-color:white;'>";
-                                item = item + "<tr><td><b>"+ordem.PAR+"</> - Usuário: "+ordem.NAME+"</td></tr>";
-                                item = item + "<tr><td>"+ordem.TIPO+ " Open Price: "+ ordem.OPENPRICE +"</td></tr></table><hr>";
-                            $("#ordenslistfield").append(item); 
+                                item = item + "<tr><td><b>"+ordem.PAR+"</> - Usuário:&nbsp;&nbsp; "+ordem.NAME+"</td></tr>";
+                                item = item + "<tr><td>"+tipoordem+ "&nbsp;&nbsp; Open Price:&nbsp;&nbsp; "+ ordem.OPENPRICE +"</td></tr>";
+                                item = item + "<tr><td>S/L: "+ordem.STOPL+ "&nbsp;&nbsp;T/P: "+ ordem.ALVO +"</td></tr></table><hr>";
+                                $("#ordenslistfield").append(item); 
 
                         });
 
