@@ -52,6 +52,52 @@ function getURL()
          
     } 	
 
+  function updateOrder()         
+
+            {
+        
+          var e = document.getElementById('oper');
+          var oper = e.options[e.selectedIndex].value;
+          var typ = document.getElementById('type');
+          var type = typ.options[typ.selectedIndex].value;
+          var par = document.getElementById('par').value;
+          var stopl = document.getElementById('stopl').value;
+          var profit = document.getElementById('profit').value;
+          var error = true;
+          console.log('updateOrder');
+                $.ajax({
+                    type: "GET",
+                    url: getURL()+"atualiza-ordem-aberta.php",
+                    timeout: 3000,
+                    contentType: "application/json; charset=utf-8",
+          data: {"oper": oper, "par":par, "stopl":stopl,"profit":profit,"type":type},
+                    success: function (result, jqXHR) {
+         
+                       var userData = JSON.parse(result);
+ 
+                       if (userData.MESSAGE == "OK"){
+                           $("#msg").html('<center><b>Alt enviada: '+oper+' Qt.Usuarios: '+userData.QTUSERS+'</center>');
+                           error = true;
+                       }
+                       else
+                       {
+                           $("#msg").html('<center><b>'+userData.MESSAGE+'</center>');
+                           error = false;
+                       }                   
+         
+         
+                    },
+                    error: function (jqXHR, status) {
+                        $("#msg").html("<center>Server busy try again later... "+status+"</center>");
+                        error = false;
+          
+          },
+                });
+        
+        return error;
+         
+    }   
+
 
   function addOrderUserDB()         
 

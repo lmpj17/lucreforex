@@ -31,6 +31,12 @@
 
             }
         else
+        if ((oper == 'UP') && ((stopl == '') || (profit == '')))
+            {
+                $("#msg").html('<center><b>Stop e profit devem ser informados</center>');
+
+            }
+        else
             openOrder();
          return false;
     });
